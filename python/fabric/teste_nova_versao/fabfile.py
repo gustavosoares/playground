@@ -15,7 +15,5 @@ def prod():
 
 @roles('web')
 def deploy():
-    run('pwd')
-    run('ls -l')
     sudo('pwd')
     sudo('ls')
