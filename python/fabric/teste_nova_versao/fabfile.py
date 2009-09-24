@@ -1,19 +1,18 @@
 from fabric.api import *
+from services import *
+from setup import *
 
-env.roledefs = {
-    'web': ['riovld48.globoi.com'],
-    'filer': ['riovld48.globoi.com']
-}
 
-def dev():
-#    env.hosts = ['riovld48.globoi.com']
-    env.user = 'puppet'
 
-def prod():
-#    env.hosts = ['riovld48.globoi.com']
-    env.user = 'puppet'
+## FIM STAGES ##
 
 @roles('web')
 def deploy():
-    sudo('pwd')
-    sudo('ls')
+	'''Deploy para o ambiente escolhido com o comando fab [AMB] deploy'''
+	sudo('pwd')
+	sudo('ls')
+    
+def teste():
+	'''Teste'''
+	print env.application
+	stop()
