@@ -1,3 +1,4 @@
+#TODO: importar o modulo de forma diferente
 from deploy_util import *
 from fabric.api import *
 
@@ -35,7 +36,7 @@ def prod():
 
 @roles('web')
 def setup_master():
-	'''Setup master server'''
+	'''######### Setup master server'''
 	#setup_filer()
 	sudo("yum -y install git_globo")
 	sudo("yum -y install augeas-libs")
@@ -64,6 +65,7 @@ def check_be():
 
 @roles('web')
 def check():
+	'''###### Environments checks'''
 	check_be()
 '''
   desc "########## Verifica o ambiente backend ##########"
